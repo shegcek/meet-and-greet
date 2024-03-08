@@ -695,7 +695,6 @@
 
         <!-- feedback -->
         <!--=============== FONT AWESOME ===============-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
         <div class="main-testimonials">
 
@@ -749,7 +748,7 @@
                 color: #333333;
                 border-radius: 15px;
                 margin: 20px auto;
-                padding: 30px 50px 50px; /* Adjusted padding */
+                padding: 20px 30px 30px; /* Adjusted padding for smaller screens */
                 width: 80%; /* Adjusted width */
                 max-width: 800px; /* Added max-width */
                 position: relative;
@@ -819,7 +818,20 @@
             #btn5-next {
                 right: 15px; /* Adjusted position */
             }
+        
+            @media only screen and (max-width: 768px) {
+                .testimonial-container {
+                    padding: 15px 20px 20px; /* Reduced padding for smaller screens */
+                }
+            }
+        
+            @media only screen and (max-width: 576px) {
+                .testimonial-container {
+                    padding: 10px 15px 15px; /* Further reduced padding for smaller screens */
+                }
+            }
         </style>
+        
         
 
             <script>
