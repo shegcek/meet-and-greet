@@ -703,7 +703,7 @@
 
         <!-- feedback -->
         <!--=============== FONT AWESOME ===============-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
         <div class="main-testimonials">
 
             <div class="testimonial-container">
@@ -737,7 +737,7 @@
                     contributions.
                 </p>
                 <div class="user">
-                    <!-- <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image" /> -->
+                    <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image" />
                     <div class="user-details">
                         <h4 class="username">Rida Thariq and Sandra Alex</h4>
                         <p class="role">Government College Of Engineering Kannur</p>
@@ -792,12 +792,34 @@
                 color: #555555; 
             }
         
+            .user .user-image {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+}
+
             .user .role {
                 margin: 0;
                 font-size: 14px; 
                 color: #777777; 
             }
-        
+            .progress-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.progress-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.progress-dot.active {
+  background-color: #555;
+}
+
             .btn5 {
                 position: absolute;
                 top: 50%;
@@ -845,7 +867,7 @@
             <script>
                 const testimonialsContainer = document.querySelector(".testimonials-container");
                 const testimonial = document.querySelector(".testimonial");
-                // const userImage = document.querySelector(".user-image");
+                const userImage = document.querySelector(".user-image");
                 const username = document.querySelector(".username");
                 const role = document.querySelector(".role");
                 const btn5Prev = document.getElementById("btn5-prev");
@@ -856,26 +878,26 @@
                     {
                         name: "Rida Thariq and Sandra Alex",
                         position: "Government College Of Engineering, Kannur",
-                        // photo: "https://randomuser.me/api/portraits/women/44.jpg",
+                        photo: "https://randomuser.me/api/portraits/women/44.jpg",
                         text: "We had an unforgettable experience at the MEET AND GREET of SHE camp at GCEK. From the enlightening sessions, each carrying a unique message, to the impeccable food and accommodation, every aspect was excellent. But what truly stood out for me was Vandana Mam and the SHE team of GCEK. Vandana Mam embodies an extraordinary personality with countless lessons to offer, while the SHE team displayed unparalleled excellence through their actions. They exemplified the adage 'Action speaks louder than words,' teaching us profound lessons through their deeds. Their impact was profound, leaving me inspired to make a difference in my college community. This camp imparted unique insights and provided a truly enriching experience. Gratitude to Vandana Mam and the SHE team of GCEK for their invaluable contributions."
                     },
                     {
                         name: "Chirutha",
                         position: "College Of Engineering, Thiruvananthapuram",
-                        // photo: "https://randomuser.me/api/portraits/women/67.jpg",
+                        photo: "https://randomuser.me/api/portraits/women/67.jpg",
                         text: "The camp experience was truly incredible. The workshops were both inspiring and engaging, leaving a lasting impact. I'm eager to participate in another camp in the future. It was a pleasure to connect with individuals from various government colleges, and I had the opportunity to forge meaningful friendships."
                     },
                     {
                         name: "Devna Mody",
                         position: "Government Engineering College, Idukki",
-                        // photo: "https://randomuser.me/api/portraits/women/8.jpg",
+                        photo: "https://randomuser.me/api/portraits/women/8.jpg",
                         text:
                             "These two days vere so much valuable for me.This camp was entirely different from the  other camps that I have attended.Honestly Speaking those empowered women in the camp inspired me alot especially students of Geck and Vandana Mam.So grateful to Vandana Mam .I can assure that because of this  camp I could create a great impact in our campus also."
                     },
                     {
                         name: "Sneha ",
                         position: "Government Engineering College, Wayanad",
-                        // photo: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+                        photo: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
                         text:
                             "I'm so grateful that I was able to take part in such an empowering, self affirming,collaborative and positive experience.SHE provided a safe space where I could be my authentic self, without fear of judgement.Thankyou the whole team of SHE GECK for providing this incredible experience"
                     },
@@ -894,7 +916,7 @@
                     const { name, position, text } = testimonials[idx];
 
                     testimonial.innerHTML = text;
-                    //   userImage.src = photo;
+                      userImage.src = photo;
                     username.innerHTML = name;
                     role.innerHTML = position;
 
@@ -925,7 +947,274 @@
 
                 displayTestimonial();
 
-            </script>
+            </script> -->
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+            <div class="testimonial-container">
+                <div class="content" style="padding-bottom: 0%;">
+                    <br>
+                    <h1 style="text-align: center; margin-top: 0;">Feedbacks</h1>
+                    <div class="line"></div>
+                    <br>
+                </div>
+              <div class="btn5" id="btn5-prev"><i class="fa-solid fa-chevron-left"></i></div>
+              <div class="btn5" id="btn5-next"><i class="fa-solid fa-chevron-right"></i></div>
+              <!-- <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div> -->
+              <p class="testimonial">
+                We had an unforgettable experience at the MEET AND GREET of SHE camp at GCEK. From the enlightening sessions, each carrying a unique message, to the impeccable food and accommodation, every aspect was excellent. But what truly stood out for me was Vandana Mam and the SHE team of GCEK. Vandana Mam embodies an extraordinary personality with countless lessons to offer, while the SHE team displayed unparalleled excellence through their actions. They exemplified the adage "Action speaks louder than words," teaching us profound lessons through their deeds. Their impact was profound, leaving me inspired to make a difference in my college community. This camp imparted unique insights and provided a truly enriching experience. Gratitude to Vandana Mam and the SHE team of GCEK for their invaluable contributions.
+              </p>
+              <div class="user">
+                <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image" />
+                <div class="user-details">
+                  <h4 class="username">Rida Thariq and Sandra Alex</h4>
+                  <p class="role">Government College Of Engineering Kannur</p>
+                </div>
+              </div>
+              <div class="progress-dots" id="progress-dots"></div>
+              <br>            
+            </div>
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* 
+* {
+  box-sizing: border-box;
+} */
+
+/* body {
+  background-color: #eee;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+} */
+.testimonial-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                background-color: #ffffff;
+                color: #333333;
+                border-radius: 15px;
+                margin: 20px auto;
+                padding: 5px; /* Adjusted padding for smaller screens */
+                width: 80%; /* Adjusted width */
+                max-width: 800px; /* Added max-width */
+                position: relative;
+                border: 1px solid #ccc; /* Thin border */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            }
+        
+            .content {
+                width: 100%;
+            }
+        
+            .testimonial {
+                text-align: justify; 
+                margin-top: 0;
+                font-size: 1.4rem; 
+                line-height: 1.5; 
+                padding: 0 8%;
+            }
+        
+            .user {
+                margin-top: auto; 
+                text-align: center; 
+            }
+        
+            .user-details {
+                text-align: center;
+            }
+        
+            .user .username {
+                margin: 0;
+                font-size: 18px; 
+                font-weight: bold;
+                color: #555555; 
+            }
+        
+            .user .user-image {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border: 3px solid #174A45;
+}
+
+            .user .role {
+                margin: 0;
+                font-size: 14px; 
+                color: #777777; 
+            }
+
+.progress-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.progress-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.progress-dot.active {
+  background-color: #555;
+}
+
+
+.btn5 {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #eeeeee; 
+                font-size: 14px; 
+                cursor: pointer;
+                transition: 0.1s ease;
+                color: #888888; 
+                background-color: transparent; 
+            }
+        
+            .btn5:hover {
+                background-color: #f9f9f9; 
+            }
+        
+            #btn5-prev {
+                left: 15px; 
+            }
+        
+            #btn5-next {
+                right: 15px; 
+            }
+        
+            @media only screen and (max-width: 768px) {
+                .testimonial-container {
+                    padding: 5px 2px; /* Reduced padding for smaller screens */
+                }
+            }
+        
+            @media only screen and (max-width: 576px) {
+                .testimonial-container {
+                    padding: 5px 1px; /* Further reduced padding for smaller screens */
+                }
+            }
+            </style>
+
+<script>
+    const testimonialsContainer = document.querySelector(".testimonials-container");
+const testimonial = document.querySelector(".testimonial");
+const userImage = document.querySelector(".user-image");
+const username = document.querySelector(".username");
+const role = document.querySelector(".role");
+const btn5Prev = document.getElementById("btn5-prev");
+const btn5Next = document.getElementById("btn5-next");
+const progressDots = document.getElementById("progress-dots");
+
+const testimonials = [
+  {
+    name: "Rida Thariq",
+    position: "Government College Of Engineering, Kannur",
+    photo: "./img/Rida.jpeg",
+    text:
+" We had an unforgettable experience at the MEET AND GREET of SHE camp at GCEK. From the enlightening sessions, each carrying a unique message, to the impeccable food and accommodation, every aspect was excellent. But what truly stood out for me was Vandana Mam and the SHE team of GCEK. Vandana Mam embodies an extraordinary personality with countless lessons to offer, while the SHE team displayed unparalleled excellence through their actions. They exemplified the adage 'Action speaks louder than words,' teaching us profound lessons through their deeds. Their impact was profound, leaving me inspired to make a difference in my college community. This camp imparted unique insights and provided a truly enriching experience. Gratitude to Vandana Mam and the SHE team of GCEK for their invaluable contributions."  },
+  {
+    name: "Chirutha",
+    position: "College Of Engineering, Thiruvananthapuram",
+    photo: "./img/Chirutha.jpeg",
+    text:
+    "The camp experience was truly incredible. The workshops were both inspiring and engaging, leaving a lasting impact. I'm eager to participate in another camp in the future. It was a pleasure to connect with individuals from various government colleges, and I had the opportunity to forge meaningful friendships."
+  },
+  {
+    name: "Sandra Alex",
+    position: "Government College Of Engineering, Kannur",
+    photo: "./img/Sandra.jpeg",
+    text:
+   "We had an unforgettable experience at the MEET AND GREET of SHE camp at GCEK. From the enlightening sessions, each carrying a unique message, to the impeccable food and accommodation, every aspect was excellent. But what truly stood out for me was Vandana Mam and the SHE team of GCEK. Vandana Mam embodies an extraordinary personality with countless lessons to offer, while the SHE team displayed unparalleled excellence through their actions. They exemplified the adage 'Action speaks louder than words,' teaching us profound lessons through their deeds. Their impact was profound, leaving me inspired to make a difference in my college community. This camp imparted unique insights and provided a truly enriching experience. Gratitude to Vandana Mam and the SHE team of GCEK for their invaluable contributions."  
+
+  },
+  {
+    name: "Devna Mody",
+    position: "Government Engineering College, Idukki",
+    photo: "./img/Devna.jpeg",
+    text:
+    "These two days vere so much valuable for me.This camp was entirely different from the  other camps that I have attended.Honestly Speaking those empowered women in the camp inspired me alot especially students of Geck and Vandana Mam.So grateful to Vandana Mam .I can assure that because of this  camp I could create a great impact in our campus also." 
+  },
+  {
+    name: "Sneha",
+    position: "Government Engineering College, Wayanad",
+    photo:
+      "./img/Sneha.jpg",
+    text:
+    "I'm so grateful that I was able to take part in such an empowering, self affirming,collaborative and positive experience.SHE provided a safe space where I could be my authentic self, without fear of judgement.Thankyou the whole team of SHE GECK for providing this incredible experience."
+  },
+
+];
+
+let idx = 0;
+
+testimonials.forEach((testimonial) => {
+  const dot = document.createElement("div");
+  dot.classList.add("progress-dot");
+  progressDots.appendChild(dot);
+});
+
+function displayTestimonial() {
+  const { name, position, photo, text } = testimonials[idx];
+
+  testimonial.innerHTML = text;
+  userImage.src = photo;
+  username.innerHTML = name;
+  role.innerHTML = position;
+
+  updateProgressDots();
+}
+
+function updateProgressDots() {
+  const dots = progressDots.children;
+  [...dots].forEach((dot) => {
+    dot.classList.remove("active");
+  });
+  dots[idx].classList.add("active");
+}
+
+btn5Next.addEventListener("click", () => {
+  idx === testimonials.length - 1 ? (idx = 0) : idx++;
+  console.log(idx);
+
+  displayTestimonial();
+});
+
+btn5Prev.addEventListener("click", () => {
+  idx === 0 ? (idx = testimonials.length - 1) : idx--;
+  console.log(idx);
+
+  displayTestimonial();
+});
+
+displayTestimonial();
+
+</script>
+
+
+
+
 
 <br><br><br>
 <!-- feedback end  -->
